@@ -1,0 +1,93 @@
+<html lang="en">
+    <head>
+        <title>UK Redistricter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/js.js"></script>
+        <link href="css/style.css" rel='stylesheet' type='text/css'/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navbar-div no-parallax">
+            <table class="navbar-table"><tbody><tr>
+                <td class="navbar-td">Home</td>
+                <td class="navbar-td">How It Works</td>
+                <td class="navbar-td">Fairness</td>
+                <td class="navbar-td">About</td>
+                <td class="navbar-td">Contact</td>
+            </tr></tbody></table>
+        </div>
+        <main>
+            <section class="parallax header-sec">
+                <div class="header-div">
+                    <h1 class="header-title">The UK<br>Redistricter Project</h1>
+                    <h1 class="header-subtitle" style="margin-top: 40px;">Fair electoral redistricting</h1>
+                </div>
+            </section>
+            <section class="no-parallax main-content-sec">
+                <div class="main-content-div">
+                    <div class="main-content-text">
+                        <h1 class="main-content-title">Section 1 Title</h1>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar lacinia libero venenatis vulputate. Nullam sollicitudin felis at sodales tincidunt. Nam ante massa, accumsan et sodales tempus, pharetra a ante. Pellentesque at lobortis nulla. Vestibulum vitae lectus eu metus hendrerit efficitur ut vel tortor.
+                    </div>
+                    <div class="main-content-parent">
+                        <div class="main-content-tile">
+                            This is a main content tile div, where we can tile main content.
+                        </div>
+                        <div class="main-content-tile">
+                            This is a main content tile div, where we can tile main content.
+                            <br><br>
+                            <button class="tile-button">This is an inline button</button>
+                            
+                        </div>
+                    </div>
+                    <div class="main-content-parent">
+                        <div class="main-content-tile">
+                            This is a main content tile div, where we can tile main content.
+                            <button class="tile-button tile-button-pos">This is a floating button</button>
+                        </div>
+                    </div>
+                    <div class="main-content-text">
+                        <h1 class="main-content-title">Section 2 Title</h1>
+                        Phasellus pellentesque elit nulla, eu interdum magna venenatis sit amet. Vivamus ullamcorper arcu aliquet lorem feugiat pretium. Nulla aliquet feugiat imperdiet. Praesent vel massa non tellus ullamcorper congue. Aliquam lobortis magna magna, id ullamcorper magna dictum at. Quisque egestas arcu dignissim, sodales libero sit amet, facilisis sem. Mauris lobortis elit sem, id porttitor lacus bibendum in. Integer bibendum ex sed purus accumsan, eget hendrerit libero pellentesque. Duis interdum lacus viverra sem semper imperdiet. Nullam lacinia felis vitae lacinia tincidunt. Morbi sollicitudin sapien ut tempus rutrum. Integer tincidunt, purus sit amet iaculis aliquet, enim dolor tempor sem, non dignissim nulla mauris id lacus. Pellentesque at porttitor dui. Curabitur congue augue eu mi pharetra cursus. Duis in urna consectetur, tincidunt felis id, posuere erat.
+                        <br><br>
+                        Phasellus commodo lacus nec turpis lobortis vestibulum. Aliquam ut hendrerit mi, ut hendrerit metus. Nam molestie metus odio, ut mollis diam pulvinar eget. Vivamus a mauris a augue ullamcorper fermentum quis vitae dui. Nulla at tempor nibh. Maecenas eu pharetra lectus, eget sollicitudin nisi. Phasellus pellentesque nec tellus mattis rutrum. Quisque quis feugiat est, at lobortis orci. Nunc vitae sagittis odio. Curabitur euismod nibh est, et iaculis turpis fringilla et.
+                    </div>
+                    <div class="resizeable-outer-div" style="height: 350px;"><div class="resizeable-inner-div" id="bottom-img"></div></div>
+                </div>
+            </section>
+            <section class="parallax" id="bottom-parallax-sec">
+                <div id="bottom-parallax-table">
+                    <h1 class="header-subtitle">Run the algorithm</h1>
+                    <button class="img-button" onclick="location.href=`https://github.com/calluume/UK_redistricter`"><img src='css/images/github.png' class="inline-logo">View on GitHub</button>
+                    <!--<button class="img-button"><img src='css/images/gmail.png' class="inline-logo">Send an Email</button>-->
+                </div>
+            </section>
+            <section class="no-parallax footer-sec">
+                <p>
+                    This is the footer section where the footer goes.<br>
+                    Header image from <a href="https://pxhere.com/en/photo/661722?utm_content=clipUser&utm_medium=referral&utm_source=pxhere">PxHere</a>
+                    <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Pixel perfect - Flaticon</a>
+                    <a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Pixel perfect - Flaticon</a><br>
+                    <span id="last-updated"><b>Last Updated:</b></span><br>
+                    
+                </p>
+            </section>
+        </main>
+    </body>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let repos = JSON.parse(this.responseText);
+            repos.forEach((repo)=>{
+                date = new Date(repo.updated_at)
+                document.getElementById('last-updated').innerHTML += ` ${date.toLocaleString('default', { month: 'short' })} ${date.getDate()}, ${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}`
+            });
+        }
+        };
+        xhttp.open("GET", "https://api.github.com/users/petitchef/repos", true);
+        xhttp.send();
+    </script>
+</html>

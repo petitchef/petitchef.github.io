@@ -1,0 +1,235 @@
+:root {
+    --dark-grey: rgb(48, 48, 48);
+    --light-grey: rgb(247, 247, 247);
+    --main-accent: rgb(48, 48, 48);
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+@media (max-width: 700px) {
+    .navbar-table {
+        width: 100% !important;
+    }
+    .main-content-div {
+        width: 90% !important;
+    }
+}
+
+.navbar-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: var(--dark-grey);
+}
+
+.navbar-table {
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar-td {
+    text-align: center;
+    color: white;
+    user-select: none;
+}
+
+main {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
+  
+section {
+    transform-style: preserve-3d;
+    position: relative;
+    display: flex;
+}
+
+.main-content-sec {
+    background-color: white;
+    min-height: 100vh;
+}
+
+.main-content-div {
+    width: 70%;
+    margin: 60px auto 60px;
+}
+
+.main-content-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content-parent {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 100%;
+    margin: 40px 0;
+}
+
+.main-content-tile {
+    text-align: center;
+    min-height: 250px;
+    background-color: var(--light-grey);
+    padding: 20px;
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 20%);
+    position: relative;
+}
+
+.resizeable-outer-div {
+    overflow: hidden;
+    margin: 60px 0 20px;
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 20%);
+}
+
+.resizeable-inner-div {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    place-items: center;
+}
+
+#bottom-img {
+    background-image: url('images/header.jpg');
+}
+  
+.no-parallax {
+    z-index: 999;
+}
+
+.header-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    text-align: center;
+}
+
+.header-title {
+    width: 100%;
+    text-align: center;
+    font-size: 3.5rem;
+    margin: 0;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    transition: 0.2s;
+}
+
+.header-title:hover {
+    opacity: 0.8;
+}
+
+.header-subtitle {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    transition: 0.2s;
+}
+
+.header-subtitle:hover {
+    opacity: 0.8;
+}
+
+.parallax::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(1.5);
+    background-size: 100%;
+    z-index: -1;
+}
+  
+.header-sec {
+    height: 90vh;
+}
+
+.header-sec::after {
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('images/header.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#bottom-parallax-sec {
+    height: 100vh;
+}
+
+#bottom-parallax-sec::after {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('images/benches.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#bottom-parallax-table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.img-button {
+    background-color: white;
+    border: none;
+    font-size: 1.4em;
+    padding: 10px 30px;
+    margin: 0 10px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 50%);
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: 'Work Sans', sans-serif;
+    user-select: none;
+}
+
+.img-button:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+}
+
+.tile-button {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    user-select: none;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    transition: 0.2s;
+}
+
+.tile-button:hover {
+    box-shadow: none;
+}
+
+.tile-button-pos {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.inline-logo {
+    height: 1rem;
+    margin: 0 10px 0 0;
+}
+
+.footer-sec {
+    height: 25vh;
+    background-color: var(--light-grey);
+}
